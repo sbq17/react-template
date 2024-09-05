@@ -1,0 +1,8 @@
+.layout_wrapper {
+	.layout_content_css {
+		/* 加载route页面的包裹器div样式 */
+		> div {
+			@apply w-full h-full;
+		}
+	}
+}
