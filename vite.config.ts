@@ -57,16 +57,6 @@ export default defineConfig({
 		open: true,
 		hmr: true,
 		port: 2638
-		// proxy: {
-		// 	'/api': {
-		// 		target: 'https://www.fastmock.site/mock/2b1efd5d590c023f39a78d20c61fd540/api',
-		// 		changeOrigin: true,
-		// 		rewrite: path => {
-		// 			console.log(path)
-		// 			return path.replace(/^\/api/, '')
-		// 		}
-		// 	}
-		// }
 	},
 	resolve: {
 		alias: {
