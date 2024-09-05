@@ -1,0 +1,11 @@
+::-webkit-scrollbar {
+	@apply w-2 h-2;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-[#999898];
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-gray-500;
+}

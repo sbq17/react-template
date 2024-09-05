@@ -1,0 +1,32 @@
+/* ant design modal自定义样式 */
+.custom_modal_wrapper_css {
+	@apply overflow-auto max-h-[80%] select-none;
+
+	> div:nth-child(2) {
+		@apply h-full overflow-auto;
+	}
+}
+
+.custom_modal_css {
+	@apply h-full overflow-auto flex flex-col;
+
+	/* 关闭按钮 */
+	.ant-modal-close {
+		@apply top-0 right-0 bottom-0;
+	}
+
+	/* 弹窗头部样式 */
+	.ant-modal-header {
+		.ant-modal-title {
+			@apply h-full flex items-center;
+		}
+	}
+
+	.ant-modal-body {
+		@apply flex-1 overflow-auto;
+	}
+
+	.ant-modal-footer {
+		@apply flex items-center;
+	}
+}

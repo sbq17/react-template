@@ -1,0 +1,46 @@
+.xbond_page_wrapper {
+	@apply w-full h-full px-2 py-1 flex flex-col;
+
+	/* 分割器gutter样式 */
+	.gutter-vertical {
+		@apply flex justify-center relative bg-gray-600 cursor-pointer;
+
+		&:hover {
+			@apply bg-gray-500;
+		}
+
+		&::before {
+			content: '===';
+			@apply absolute px-3 pb-1 bg-[var(--ant-color-primary)] top-[-3px] rounded;
+		}
+	}
+
+	/* xbond 分割器样式 */
+	.xbond_split_wrapper {
+		@apply w-full h-full;
+
+		> div {
+			&:first-child,
+			&:last-child {
+				@apply flex flex-col;
+			}
+		}
+	}
+
+	/* esp组件映射样式 */
+	.component_esp_wrapper {
+		@apply h-full overflow-auto;
+
+		> div {
+			@apply flex flex-col gap-2 flex-1 h-full;
+		}
+
+		header {
+			@apply pl-[310px] h-6;
+		}
+
+		main {
+			@apply flex-1 overflow-auto;
+		}
+	}
+}

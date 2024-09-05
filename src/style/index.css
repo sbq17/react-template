@@ -1,0 +1,15 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './modal.css';
+@import './scrollbar.css';
+
+html,
+body {
+	@apply w-screen h-screen;
+
+	#app {
+		@apply h-full w-full select-none;
+	}
+}

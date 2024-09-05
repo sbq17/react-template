@@ -1,0 +1,19 @@
+.layout_header_wrapper {
+	@apply flex items-center gap-2;
+
+	> div {
+		@apply border-r-[1px] border-[#195149];
+
+		> button:last-child {
+			@apply mr-2;
+		}
+
+		.home_btn_css {
+			@apply bg-amber-400 hover:!bg-amber-300 !text-black;
+		}
+
+		button {
+			@apply hover:!bg-amber-400 hover:!text-black hover:!fill-black;
+		}
+	}
+}
