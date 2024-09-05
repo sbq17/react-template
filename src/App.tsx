@@ -9,11 +9,14 @@ import { useWindowSize, windowSizeContext } from './context/windowSize'
 export default function App() {
 	const { dom, size } = useWindowSize()
 
+	const [isDark, setIsDark] = useState(() => theme.defaultAlgorithm)
+
 	return (
 		<ConfigProvider
 			theme={{
 				cssVar: true,
-				algorithm: theme.darkAlgorithm,
+				// algorithm: theme.darkAlgorithm,
+				algorithm: isDark,
 				token: {
 					colorPrimary: '#136C5E',
 					fontSize: 12

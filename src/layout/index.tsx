@@ -14,7 +14,7 @@ export default forwardRef(function LayoutComponent(props, ref) {
 		lineHeight: 1,
 		padding: 0,
 		margin: 0,
-		background: '#2f2e2e'
+		background: 'transparent'
 	}
 
 	const contentStyle: CSSProperties = {
@@ -27,8 +27,8 @@ export default forwardRef(function LayoutComponent(props, ref) {
 		height: 28,
 		lineHeight: 1,
 		padding: 0,
-		margin: 0,
-		background: '#2f2e2e'
+		margin: 0
+		// background: '#2f2e2e'
 	}
 
 	const layoutStyle: CSSProperties = {
@@ -64,7 +64,7 @@ export default forwardRef(function LayoutComponent(props, ref) {
 			{isUseLayout ? (
 				<>
 					{/* 侧边栏 */}
-					<Sider width="25%">Sider</Sider>
+					<Sider>Sider</Sider>
 					<Layout>
 						{/* 顶部栏 */}
 						<Header style={headerStyle}>
