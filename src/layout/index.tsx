@@ -5,6 +5,7 @@ import { routes as routesList } from '@/router'
 import { Route, Routes, useRoutes } from 'react-router-dom'
 
 import './index.css'
+import SideBar from './SideBar'
 
 export default forwardRef(function LayoutComponent(props, ref) {
 	const { Header, Footer, Content, Sider } = Layout
@@ -66,7 +67,9 @@ export default forwardRef(function LayoutComponent(props, ref) {
 			{isUseLayout ? (
 				<>
 					{/* 侧边栏 */}
-					<Sider>Sider</Sider>
+					<Sider>
+						<SideBar />
+					</Sider>
 					<Layout>
 						{/* 顶部栏 */}
 						<Header style={headerStyle}>

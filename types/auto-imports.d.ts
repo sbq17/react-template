@@ -12,6 +12,7 @@ declare global {
   const Input: typeof import('antd')['Input']
   const Layout: typeof import('antd')['Layout']
   const LightTable: typeof import('../src/components/LightTable/index')['default']
+  const Menu: typeof import('antd')['Menu']
   const Modal: typeof import('antd')['Modal']
   const Select: typeof import('antd')['Select']
   const Space: typeof import('antd')['Space']
