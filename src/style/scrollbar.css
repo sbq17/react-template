@@ -3,9 +3,9 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	@apply bg-[#999898];
+	@apply bg-[#bc6213];
 }
 
 ::-webkit-scrollbar-track {
-	@apply bg-gray-500;
+	@apply bg-[#585654];
 }

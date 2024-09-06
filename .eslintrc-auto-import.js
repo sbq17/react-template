@@ -1,13 +1,12 @@
 export default {
   "globals": {
-    "Button": true,
+    "Breadcrumb": true,
     "CustomRouteProp": true,
     "Layout": true,
-    "Modal": true,
+    "LightTable": true,
     "RouteObject": true,
     "RouteProps": true,
     "SvgIcon": true,
-    "Tooltip": true,
     "cloneDeep": true,
     "createRef": true,
     "debounce": true,

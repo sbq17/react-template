@@ -1,19 +1,48 @@
 .layout_header_wrapper {
-	@apply flex items-center gap-2;
+	@apply h-full w-full px-2 shadow-lg;
 
-	> div {
-		@apply border-r-[1px] border-[#195149];
+	.header_left_wrapper {
+		@apply flex items-center gap-2 border-b-[1px] h-8;
+	}
 
-		> button:last-child {
-			@apply mr-2;
+	.tags_view_wrapper {
+		@apply h-8 flex items-center overflow-auto gap-2;
+
+		/* tag标签页样式 */
+		.tag_item {
+			@apply whitespace-nowrap px-2 border-[1px] border-blue-400 rounded-[4px] flex gap-1 h-6 items-center justify-center;
+
+			&:hover {
+				@apply bg-blue-300 text-white cursor-pointer;
+
+				.tag_close {
+					@apply block;
+
+					&:hover {
+						@apply text-red-500;
+					}
+				}
+			}
+
+			.tag_close {
+				@apply hidden;
+			}
 		}
 
-		.home_btn_css {
-			@apply bg-amber-400 hover:!bg-amber-300 !text-black;
+		&::-webkit-scrollbar {
+			@apply h-1 w-1;
 		}
 
-		button {
-			@apply hover:!bg-amber-400 hover:!text-black hover:!fill-black;
+		/* 当hover tag区域时，有滚动则显示滚动 */
+		/* 不需要该样式时，删除即可 */
+		/* &::-webkit-scrollbar {
+			@apply w-0 h-0;
 		}
+
+		&:hover {
+			&::-webkit-scrollbar {
+				@apply h-1 w-1;
+			}
+		} */
 	}
 }

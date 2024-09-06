@@ -10,7 +10,7 @@ export default forwardRef(function LayoutComponent(props, ref) {
 	const { Header, Footer, Content, Sider } = Layout
 
 	const headerStyle: CSSProperties = {
-		height: 36,
+		height: 64,
 		lineHeight: 1,
 		padding: 0,
 		margin: 0,
