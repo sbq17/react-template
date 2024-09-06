@@ -10,7 +10,7 @@
 
 		/* tag标签页样式 */
 		.tag_item {
-			@apply whitespace-nowrap px-2 border-[1px] border-blue-400 rounded-[4px] flex gap-1 h-6 items-center justify-center;
+			@apply text-[12px] whitespace-nowrap px-2 border-[1px] border-blue-400 rounded-[4px] flex gap-1 h-6 items-center justify-center;
 
 			&:hover {
 				@apply bg-blue-300 text-white cursor-pointer;

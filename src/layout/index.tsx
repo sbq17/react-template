@@ -20,14 +20,16 @@ export default forwardRef(function LayoutComponent(props, ref) {
 	const contentStyle: CSSProperties = {
 		lineHeight: 1,
 		padding: 0,
-		margin: 0
+		margin: 0,
+		overflow: 'auto'
 	}
 
 	const footerStyle: CSSProperties = {
 		height: 28,
 		lineHeight: 1,
 		padding: 0,
-		margin: 0
+		margin: 0,
+		borderTop: '1px solid'
 		// background: '#2f2e2e'
 	}
 
