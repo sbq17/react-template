@@ -1,4 +1,4 @@
-import { TabsProps } from 'antd'
+import type { TabsProps } from 'antd'
 import XbondTab from './components/XbondTab'
 import HistoryInfo from './components/HistoryInfo'
 import MarketInfo from './components/MarketInfo'

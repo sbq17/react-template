@@ -30,7 +30,13 @@
 		}
 
 		&::-webkit-scrollbar {
-			@apply h-1 w-1;
+			@apply h-1 w-1 invisible;
+		}
+		&::-webkit-scrollbar-track {
+			@apply bg-transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			@apply bg-transparent;
 		}
 
 		/* 当hover tag区域时，有滚动则显示滚动 */

@@ -1,24 +1,20 @@
-import { theme, ConfigProvider } from 'antd'
 import LayoutComponent from '@/layout'
 import zhCN from 'antd/locale/zh_CN'
+import { ConfigProvider } from 'antd'
 // for date-picker i18n
 import 'dayjs/locale/zh-cn'
 import { BrowserRouter } from 'react-router-dom'
-import { useWindowSize, windowSizeContext } from './context/windowSize'
 
 export default function App() {
-	const { dom, size } = useWindowSize()
-
-	const [isDark, setIsDark] = useState(() => theme.defaultAlgorithm)
-
+	// const [isDark, setIsDark] = useState(() => theme.defaultAlgorithm)
 	return (
 		<ConfigProvider
 			theme={{
 				cssVar: true,
 				// algorithm: theme.darkAlgorithm,
-				algorithm: isDark,
+				// algorithm: isDark,
 				token: {
-					colorPrimary: '#136C5E',
+					colorPrimary: '#2960f7',
 					fontSize: 12
 				},
 				components: {
@@ -67,11 +63,8 @@ export default function App() {
 			locale={zhCN}
 		>
 			<BrowserRouter>
-				<windowSizeContext.Provider value={size}>
-					<LayoutComponent ref={dom} />
-				</windowSizeContext.Provider>
+				<LayoutComponent />
 			</BrowserRouter>
 		</ConfigProvider>
 	)
 }
-

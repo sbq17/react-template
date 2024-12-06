@@ -1,13 +1,12 @@
-import LayoutHeader from './Header/header'
-
-import { CSSProperties, LegacyRef, Suspense } from 'react'
-import { routes as routesList } from '@/router'
-import { Route, Routes, useRoutes } from 'react-router-dom'
-
 import './index.css'
+import LayoutHeader from './Header/header'
 import SideBar from './SideBar'
 
-export default forwardRef(function LayoutComponent(props, ref) {
+import { routes as routesList } from '@/router'
+import { Route, Routes, useRoutes } from 'react-router-dom'
+import { CSSProperties, Suspense } from 'react'
+
+export default function LayoutComponent() {
 	const { Header, Footer, Content, Sider } = Layout
 
 	const headerStyle: CSSProperties = {
@@ -63,7 +62,7 @@ export default forwardRef(function LayoutComponent(props, ref) {
 	)
 
 	return (
-		<Layout {...props} style={layoutStyle} ref={ref as LegacyRef<HTMLDivElement>} rootClassName="layout_wrapper">
+		<Layout style={layoutStyle} rootClassName="layout_wrapper">
 			{isUseLayout ? (
 				<>
 					{/* 侧边栏 */}
@@ -86,4 +85,4 @@ export default forwardRef(function LayoutComponent(props, ref) {
 			)}
 		</Layout>
 	)
-})
+}

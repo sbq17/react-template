@@ -1,5 +1,5 @@
-import { MenuFoldOutlined } from '@ant-design/icons'
 import './index.css'
+import { MenuFoldOutlined } from '@ant-design/icons'
 import TagsView from './TagsView'
 
 const HeaderLeft = () => {

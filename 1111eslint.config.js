@@ -1,27 +1,24 @@
-import pluginJs from '@eslint/js'
 import globals from 'globals'
+import pluginJs from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import pluginReact from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
 import prettier from 'eslint-config-prettier'
-// import AutoImportJson from './.eslintrc-auto-import.js'
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
-	{ files: ['**/*.{js,ts,tsx,jsx}'] },
+	{ files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
 	{
 		languageOptions: { globals: globals.browser },
 		plugins: {
-			// prettier: pluginPrettier // 添加 Prettier 插件
 			'react-hooks': reactHooks,
 			'react-refresh': reactRefresh
 		}
 	},
 	pluginJs.configs.recommended,
 	...tseslint.configs.recommended,
-	{
-		files: ['**/*.{js,ts,tsx,jsx}'],
-		languageOptions: { parserOptions: { parser: tseslint.parser } }
-	},
+	pluginReact.configs.flat.recommended,
 	{
 		ignores: ['dist/**/*', 'node_modules/**/*']
 	},

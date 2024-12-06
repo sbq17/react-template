@@ -1,4 +1,4 @@
-import { TabsProps } from 'antd'
+import type { TabsProps } from 'antd'
 import EspTab from './components/EspTab'
 import OrderTab from './components/OrderTab'
 import ToPushPage from './components/ToPushPage'

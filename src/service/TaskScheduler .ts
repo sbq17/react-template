@@ -58,13 +58,13 @@ export class TaskScheduler {
 	 * @param task 任务
 	 * @param timestamp 时间戳
 	 */
-	private executeTask(task: Task, timestamp: number) {
-		const delay = timestamp - this.lastTimestamp
-		if (delay >= this.targetDelay) {
-			task.fn()
-			this.lastTimestamp = timestamp
-		}
-	}
+	// private executeTask(task: Task, timestamp: number) {
+	// 	const delay = timestamp - this.lastTimestamp
+	// 	if (delay >= this.targetDelay) {
+	// 		task.fn()
+	// 		this.lastTimestamp = timestamp
+	// 	}
+	// }
 
 	/**
 	 * 启动调度器
