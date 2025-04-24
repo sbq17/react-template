@@ -1,5 +1,7 @@
 export default {
   "globals": {
+    "API_SYSTEM_MENU": true,
+    "API_USER_LOGIN": true,
     "Breadcrumb": true,
     "CustomRouteProp": true,
     "Layout": true,
@@ -7,9 +9,7 @@ export default {
     "Menu": true,
     "RouteObject": true,
     "RouteProps": true,
-    "Select": true,
     "SvgIcon": true,
-    "Tabs": true,
     "cloneDeep": true,
     "createRef": true,
     "debounce": true,
@@ -29,6 +29,7 @@ export default {
     "startTransition": true,
     "useAntdTable": true,
     "useAsyncEffect": true,
+    "useAxios": true,
     "useBoolean": true,
     "useCallback": true,
     "useClickAway": true,

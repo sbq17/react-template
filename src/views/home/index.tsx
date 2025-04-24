@@ -1,10 +1,3 @@
-/**
- * 主页
- */
 export default function HomePage() {
-	return (
-		<div>
-			<LightTable />
-		</div>
-	)
+	return <div>this is home page</div>
 }

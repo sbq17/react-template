@@ -5,6 +5,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import AntdResolver from 'unplugin-auto-import-antd'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
+const url = 'http://localhost:3000'
+const env = 'dev'
+
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
@@ -43,7 +46,7 @@ export default defineConfig({
 				}
 			],
 			dts: 'types/auto-imports.d.ts',
-			dirs: ['./src/components/**'],
+			dirs: ['./src/components/**', './src/api/**', './src/hook/**'],
 			resolvers: [AntdResolver()],
 			eslintrc: { enabled: true, filepath: './.eslintrc-auto-import.js' }
 		}),
@@ -53,10 +56,24 @@ export default defineConfig({
 			symbolId: 'icon-[dir]-[name]'
 		})
 	],
+	mode: env,
 	server: {
 		open: true,
 		hmr: true,
-		port: 2638
+		host: true,
+		port: 2638,
+		proxy: {
+			'/api': {
+				target: url + '/api',
+				changeOrigin: true,
+				rewrite: (path) => {
+					console.log('接口路径', path)
+					// return path
+					// return path
+					return path.replace(/^\/api/, '')
+				}
+			}
+		}
 	},
 	resolve: {
 		alias: {

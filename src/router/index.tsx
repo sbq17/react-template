@@ -15,6 +15,12 @@ export const routes: CustomRouteProp[] = [
 		path: '/',
 		element: <Navigate to="/main"></Navigate>
 	},
+	{
+		path: '/login',
+		Component: lazy(() => import('@/views/LoginPage')),
+		useLayout: false,
+		element: <Navigate to="/login"></Navigate>
+	},
 	...pageRoutes,
 	{
 		path: '*',

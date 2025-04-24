@@ -1,6 +1,6 @@
 import LayoutComponent from '@/layout'
 import zhCN from 'antd/locale/zh_CN'
-import { ConfigProvider } from 'antd'
+import { ConfigProvider, App as AntApp } from 'antd'
 // for date-picker i18n
 import 'dayjs/locale/zh-cn'
 import { BrowserRouter } from 'react-router-dom'
@@ -15,7 +15,7 @@ export default function App() {
 				// algorithm: isDark,
 				token: {
 					colorPrimary: '#2960f7',
-					fontSize: 12
+					fontSize: 14
 				},
 				components: {
 					Modal: {
@@ -62,9 +62,11 @@ export default function App() {
 			}}
 			locale={zhCN}
 		>
-			<BrowserRouter>
-				<LayoutComponent />
-			</BrowserRouter>
+			<AntApp className="w-full h-full">
+				<BrowserRouter>
+					<LayoutComponent />
+				</BrowserRouter>
+			</AntApp>
 		</ConfigProvider>
 	)
 }

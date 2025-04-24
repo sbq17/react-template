@@ -4,6 +4,7 @@
 
 @import './modal.css';
 @import './scrollbar.css';
+@import './custom.tailwind.css';
 
 html,
 body {
