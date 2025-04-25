@@ -7,6 +7,7 @@ export default {
     "Button": true,
     "CustomRouteProp": true,
     "FormEditor": true,
+    "Input": true,
     "Layout": true,
     "LightTable": true,
     "Menu": true,
