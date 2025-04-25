@@ -14,7 +14,36 @@ const FormEditor = <T extends object = any>(props: FormEditorProps<T>) => {
 	}
 
 	const renderComponent = (item: FormColumn<T>) => {
-		//
+		// if (!item.type) {
+		// 	return null
+		// }
+
+		switch (item.type) {
+			case 'input':
+				return <Input {...item.props} />
+			case 'inputPassword':
+				return <Input.Password {...item.props} />
+			case 'inputTextarea':
+				return <Input.TextArea {...item.props} />
+			case 'inputSearch':
+				return <Input.Search {...item.props} />
+			case 'inputOtp':
+				return <Input.OTP {...item.props} />
+			case 'select':
+				return (
+					<Select {...item.props}>
+						{item.options?.map((option) => (
+							<Select.Option key={option.value} value={option.value}>
+								{option.label}
+							</Select.Option>
+						))}
+					</Select>
+				)
+			case 'checkbox':
+				return <Checkbox {...item.props} />
+			default:
+				return <Input {...(item as any).props} />
+		}
 	}
 
 	/**
