@@ -64,7 +64,7 @@ type BaseColumn<T> = FormItemProps<T> & {
 	wrapperCol?: number | FormItemProps['wrapperCol']
 } & CustomColumnProps<T>
 
-export declare type FormColumn<T> =
+export declare type FormColumn<T = any> =
 	| InputColumn<T>
 	| InputPwdColumn<T>
 	| InputTextAreaColumn<T>

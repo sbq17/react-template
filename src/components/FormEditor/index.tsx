@@ -30,10 +30,9 @@ const FormEditor = <T extends object = any>(props: FormEditorProps<T>) => {
 	 * @param {T} allValues 当前表单的所有值
 	 */
 	const onFormChange: FormProps<T>['onValuesChange'] = (changeValues, allValues) => {
-		console.log(changeValues, allValues, props.onFormChange)
 		// 如果父组件传递了 onFormChange 函数，则调用它
 		if (props.onFormChange) {
-			props.onFormChange(allValues)
+			props.onFormChange({ allValues, changeValues })
 		}
 	}
 

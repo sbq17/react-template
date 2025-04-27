@@ -2,7 +2,6 @@
 import type { ColProps, FormProps, RowProps } from 'antd'
 import type { FormColumn } from './column'
 import type { BtnProps } from '@/components/BtnItem/type'
-import type { Dispatch, SetStateAction } from 'react'
 
 export interface FormEditorProps<T = any> {
 	/**
@@ -24,8 +23,8 @@ export interface FormEditorProps<T = any> {
 	/**
 	 * 表单值变化回调函数
 	 */
-	// onFormChange?: FormProps<T>['onValuesChange']
-	onFormChange?: Dispatch<SetStateAction<T>>
+	onFormChange?: (params: { changeValues: T; allValues: T }) => void
+	// onFormChange?: Dispatch<SetStateAction<T>>
 	/**
 	 * 表单呈现模式
 	 */
