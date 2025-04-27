@@ -35,6 +35,8 @@ const LoginPage = () => {
 	)
 
 	const handleSubmit = (values: LoginInfo) => {
+		console.log(values, 'xxx')
+
 		run({ data: values })
 	}
 
