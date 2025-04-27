@@ -13,6 +13,7 @@ declare global {
   const Checkbox: typeof import('antd')['Checkbox']
   const ConfigProvider: (typeof import('antd'))['ConfigProvider']
   const ErrorPage: (typeof import('../src/components/ErrorPage'))['default']
+  const Form: typeof import('antd')['Form']
   const FormCompoent: (typeof import('../src/components/FormCompoent/index'))['default']
   const FormEditor: typeof import('../src/components/FormEditor/index')['default']
   const Input: typeof import('antd')['Input']

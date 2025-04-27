@@ -13,6 +13,7 @@ type CustomColumnProps<T> = {
 	key?: string
 	colProps?: number | ColProps
 	type?: never // 确保基础类型没有type属性
+	labelPlaceholder?: boolean
 }
 
 type InputColumn<T> = {
@@ -58,7 +59,10 @@ type CheckboxColumn<T> = {
 } & FormItemProps<T> &
 	Omit<CustomColumnProps<T>, 'type'>
 
-type BaseColumn<T> = FormItemProps<T> & CustomColumnProps<T>
+type BaseColumn<T> = FormItemProps<T> & {
+	labelCol?: number | FormItemProps['labelCol']
+	wrapperCol?: number | FormItemProps['wrapperCol']
+} & CustomColumnProps<T>
 
 export declare type FormColumn<T> =
 	| InputColumn<T>

@@ -1,4 +1,5 @@
 import { FormColumn } from '@/components/FormEditor/types'
+import { FormProps } from 'antd'
 
 declare type LoginInfo = {
 	username: string
@@ -8,6 +9,12 @@ declare type LoginInfo = {
 	otp?: string
 	gender?: 'male' | 'female'
 	remember?: boolean
+}
+
+type FieldType = {
+	username?: string
+	password?: string
+	remember?: string
 }
 
 const LoginPage = () => {
@@ -92,27 +99,69 @@ const LoginPage = () => {
 		},
 		// 复选框
 		{
-			label: '记住我',
+			label: null,
 			name: 'remember',
 			type: 'checkbox',
 			valuePropName: 'checked',
 			props: {
-				defaultChecked: true
+				children: '记住我'
 			}
+			// props: {
+			// 	defaultChecked: true
+			// }
 		}
 	]
+
+	const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+		console.log('Success:', values)
+	}
+
+	const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
+		console.log('Failed:', errorInfo)
+	}
 
 	return (
 		<div className="flex-center h-screen bg-gray-100">
 			<div className="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
 				<h1 className="text-2xl font-bold mb-6 text-center">登录</h1>
-				<FormEditor data={userInfo} columns={columns} onSubmit={handleSubmit} />
-				{/* <BtnItem 
-					label={'登录'} 
-					className="w-full" 
-					type="primary" 
-					onClick={() => form.submit()}
-				/> */}
+				<FormEditor data={userInfo} columns={columns} onFormChange={setUserInfo} onSubmit={handleSubmit} />
+
+				{/* <Form
+					name="basic"
+					labelCol={{ span: 8 }}
+					wrapperCol={{ span: 16 }}
+					style={{ maxWidth: 600 }}
+					initialValues={{ remember: true }}
+					onFinish={onFinish}
+					onFinishFailed={onFinishFailed}
+					autoComplete="off"
+				>
+					<Form.Item<FieldType>
+						label="Username"
+						name="username"
+						rules={[{ required: true, message: 'Please input your username!' }]}
+					>
+						<Input />
+					</Form.Item>
+
+					<Form.Item<FieldType>
+						label="Password"
+						name="password"
+						rules={[{ required: true, message: 'Please input your password!' }]}
+					>
+						<Input.Password />
+					</Form.Item>
+
+					<Form.Item<FieldType> name="remember" valuePropName="checked" label={null} labelCol={{ span: 8 }}>
+						<Checkbox>Remember me</Checkbox>
+					</Form.Item>
+
+					<Form.Item label={null}>
+						<Button type="primary" htmlType="submit">
+							Submit
+						</Button>
+					</Form.Item>
+				</Form> */}
 			</div>
 		</div>
 	)

@@ -34,7 +34,7 @@ export default function App() {
 			// button={{
 
 			// }}
-			componentSize="small"
+			componentSize="middle"
 			modal={{
 				classNames: {
 					content: 'custom_modal_css'
