@@ -1,25 +1,36 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { BtnProps } from '@/components/BtnItem/type'
+import type { FormInstance } from 'antd'
+import type { BaseColumn } from './column'
 
-export declare type OperationProps = {
-	/**
-	 * 是否显示提交按钮
-	 * @default true
-	 */
-	showSubmit?: boolean
+declare type OperationParams<T> = {
+	form: FormInstance<T>
+	formData: Partial<T>
+}
 
-	/**
-	 * 提交按钮的配置属性
-	 */
-	submitProps?: BtnProps
+declare type FormBtnProps<T = any> = Omit<BtnProps, 'show' | 'disabled' | 'onClick'> & {
+	show?: boolean | ((params: OperationParams<T> & { btn: FormBtnProps<T> }) => boolean)
+	disabled?: boolean | ((params: OperationParams<T> & { btn: FormBtnProps<T> }) => boolean)
+	onClick?: (
+		params: OperationParams<T> & { btn: FormBtnProps<T>; event: React.MouseEvent<HTMLElement, MouseEvent> }
+	) => void
+}
 
-	/**
-	 * 是否显示取消按钮
-	 * @default false
-	 */
-	showCancel?: boolean
-
-	/**
-	 * 取消按钮的配置属性
-	 */
-	cancelProps?: BtnProps
+export declare type FormOperation<T> = {
+	submitBtn?:
+		| boolean
+		| Omit<FormBtnProps<T>, 'onClick'>
+		| ((params: OperationParams<T>) => boolean | Omit<FormBtnProps<T>, 'onClick'>)
+	submitLabel: FormBtnProps['label']
+	cancelBtn?:
+		| boolean
+		| Omit<FormBtnProps<T>, 'onClick'>
+		| ((params: OperationParams<T>) => boolean | Omit<FormBtnProps<T>, 'onClick'>)
+	cancelLabel: FormBtnProps['label']
+	operations?: FormBtnProps<T>[] | ((params: OperationParams<T>) => FormBtnProps<T>[])
+	operationPosition?: 'start' | 'center' | 'end'
+	renderOperation?: React.ReactNode | ((params: OperationParams<T>) => React.ReactNode)
+	operationItem?: Omit<BaseColumn<T>, 'name' | 'show' | 'colProps'> & {
+		show?: boolean | ((params: OperationParams<T>) => boolean)
+	}
 }
