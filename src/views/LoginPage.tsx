@@ -1,6 +1,6 @@
-import { FormColumn } from '@/components/FormEditor/types'
+import type { FormColumn } from '@/components/FormEditor/types'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { Button } from 'antd'
+import FormEditor from '@/components/FormEditor'
 
 type UserItem = {
 	username: string
@@ -44,11 +44,18 @@ const LoginPage = () => {
 					<p className="mt-2 text-gray-600">请输入您的账号信息</p>
 				</div>
 
-				<FormEditor data={userInfo} columns={columns} onFormChange={({ allValues }) => setUserInfo(allValues)} />
-
-				<Button type="primary" size="large" className="w-full mt-6" onClick={() => console.log(userInfo)}>
-					登录
-				</Button>
+				<FormEditor
+					data={userInfo}
+					columns={columns}
+					onFormChange={({ allValues }) => setUserInfo(allValues)}
+					submitBtn={{
+						label: '登录',
+						className: 'w-full'
+					}}
+					operationItem={{
+						labelPlaceholder: false
+					}}
+				/>
 			</div>
 		</div>
 	)

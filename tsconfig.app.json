@@ -6,7 +6,6 @@
 		"module": "ESNext",
 		"skipLibCheck": true,
 
-		/* Bundler mode */
 		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"isolatedModules": true,
@@ -14,7 +13,6 @@
 		"noEmit": true,
 		"jsx": "react-jsx",
 
-		/* Linting */
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
@@ -35,6 +33,13 @@
 			"views": ["./src/views"]
 		}
 	},
-	"include": ["src", "types/vite-env.d.ts", "types/auto-imports.d.ts", "types/auto-import-components.d.ts"]
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		"src/**/*.(js|jsx)",
+		"types/vite-env.d.ts",
+		"types/auto-imports.d.ts",
+		"types/auto-import-components.d.ts"
+	]
 }
 

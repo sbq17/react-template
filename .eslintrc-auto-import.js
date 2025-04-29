@@ -7,7 +7,6 @@ export default {
     "Button": true,
     "Checkbox": true,
     "CustomRouteProp": true,
-    "Form": true,
     "FormEditor": true,
     "Input": true,
     "Layout": true,

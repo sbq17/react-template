@@ -21,12 +21,12 @@ export declare type FormOperation<T> = {
 		| boolean
 		| Omit<FormBtnProps<T>, 'onClick'>
 		| ((params: OperationParams<T>) => boolean | Omit<FormBtnProps<T>, 'onClick'>)
-	submitLabel: FormBtnProps['label']
+	submitLabel?: FormBtnProps['label']
 	cancelBtn?:
 		| boolean
 		| Omit<FormBtnProps<T>, 'onClick'>
 		| ((params: OperationParams<T>) => boolean | Omit<FormBtnProps<T>, 'onClick'>)
-	cancelLabel: FormBtnProps['label']
+	cancelLabel?: FormBtnProps['label']
 	operations?: FormBtnProps<T>[] | ((params: OperationParams<T>) => FormBtnProps<T>[])
 	operationPosition?: 'start' | 'center' | 'end'
 	renderOperation?: React.ReactNode | ((params: OperationParams<T>) => React.ReactNode)

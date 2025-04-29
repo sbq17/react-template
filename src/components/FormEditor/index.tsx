@@ -1,7 +1,10 @@
-import { Col, ColProps, Form, FormItemProps, FormProps, Row } from 'antd'
-import { FormBtnProps, FormColumn, FormEditorProps, FormOperation, OperationParams } from './types'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { ColProps, FormItemProps, FormProps } from 'antd'
+import { Col, Form, Row, Input, Select, Checkbox } from 'antd'
+import type { FormBtnProps, FormColumn, FormEditorProps, FormOperation, OperationParams } from './types'
 import { EMPTY_VALUE_LIST } from '@/constant'
-import { BtnProps } from '../BtnItem/type'
+import type { BtnProps } from '../BtnItem/type'
+import BtnItem from '../BtnItem'
 
 /**
  * 表单编辑器组件，用于动态生成表单
@@ -9,6 +12,7 @@ import { BtnProps } from '../BtnItem/type'
  * @param {FormEditorProps<T>} props 组件的属性
  * @returns {JSX.Element} 返回表单编辑器的 JSX 元素
  */
+
 const FormEditor = <T extends object = any>(props: FormEditorProps<T>) => {
 	// 使用 antd 的 Form.useForm 创建表单实例
 	const [form] = Form.useForm<T>()

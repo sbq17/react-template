@@ -24,7 +24,7 @@ export interface FormEditorProps<T = any> extends FormOperation<T> {
 	/**
 	 * 表单值变化回调函数
 	 */
-	onFormChange?: (params: { form: FormInstance<T>; changeValues: Partial<T>; allValues: Partial<T> }) => void
+	onFormChange?: (params: { form: FormInstance<T>; changeValues: Partial<T>; allValues: T }) => void
 	/**
 	 * 表单重置
 	 * @param params 参数

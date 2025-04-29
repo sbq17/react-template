@@ -1,34 +1,26 @@
-import pluginJs from '@eslint/js'
+import js from '@eslint/js'
 import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
-import prettier from 'eslint-config-prettier'
-// import AutoImportJson from './.eslintrc-auto-import.js'
+import pluginReact from 'eslint-plugin-react'
+import json from '@eslint/json'
+import markdown from '@eslint/markdown'
+import css from '@eslint/css'
+import { defineConfig } from 'eslint/config'
+import autoImport from './.eslintrc-auto-import.js'
 
-export default [
-	{ files: ['**/*.{js,ts,tsx,jsx}'] },
+export default defineConfig([
+	{ files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'], plugins: { js }, extends: ['js/recommended'] },
 	{
-		languageOptions: { globals: globals.browser },
-		plugins: {
-			// prettier: pluginPrettier // 添加 Prettier 插件
-			'react-hooks': reactHooks,
-			'react-refresh': reactRefresh
-		}
-	},
-	pluginJs.configs.recommended,
-	...tseslint.configs.recommended,
-	{
-		files: ['**/*.{js,ts,tsx,jsx}'],
-		languageOptions: { parserOptions: { parser: tseslint.parser } }
-	},
-	{
-		ignores: ['dist/**/*', 'node_modules/**/*']
-	},
-	{
-		// 添加 Prettier 配置
-		files: ['**/*.{js,ts,tsx,jsx}'],
+		files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+		languageOptions: { globals: { ...globals.browser, ...autoImport.globals } },
 		rules: {
+			'prefer-const': [
+				'error',
+				{
+					destructuring: 'any',
+					ignoreReadBeforeAssign: false
+				}
+			],
 			// 允许以 _ 开头的变量和参数
 			'@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_', argsIgnorePattern: '^_' }],
 			// '@typescript-eslint/no-unused-vars': 'error',
@@ -44,6 +36,13 @@ export default [
 			]
 		}
 	},
-	prettier // 确保将 Prettier 配置放在最后
-]
+	tseslint.configs.recommended,
+	pluginReact.configs.flat.recommended,
+	pluginReact.configs.flat['jsx-runtime'],
+	{ files: ['**/*.json'], plugins: { json }, language: 'json/json', extends: ['json/recommended'] },
+	{ files: ['**/*.jsonc'], plugins: { json }, language: 'json/jsonc', extends: ['json/recommended'] },
+	{ files: ['**/*.json5'], plugins: { json }, language: 'json/json5', extends: ['json/recommended'] },
+	{ files: ['**/*.md'], plugins: { markdown }, language: 'markdown/commonmark', extends: ['markdown/recommended'] },
+	{ files: ['**/*.css'], plugins: { css }, language: 'css/css', extends: ['css/recommended'] }
+])
 
