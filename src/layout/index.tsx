@@ -2,6 +2,7 @@ import './index.css'
 import LayoutHeader from './Header/header'
 import SideBar from './SideBar'
 
+import { Layout } from 'antd'
 import { routes as routesList } from '@/router'
 import { Route, Routes, useRoutes } from 'react-router-dom'
 import { CSSProperties, Suspense } from 'react'
@@ -54,7 +55,7 @@ export default function LayoutComponent() {
 			<Suspense>
 				<Routes>
 					{routesList.map((item) => (
-						<Route {...item} key={item.path}></Route>
+						<Route key={item.path} {...item}></Route>
 					))}
 				</Routes>
 			</Suspense>

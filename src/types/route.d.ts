@@ -1,9 +1,6 @@
-/**
- * 自定义路由信息
- */
-export declare type CustomRouteProp = RouteProps & {
-	/**
-	 * 是否使用模板
-	 */
+declare interface CustomRouteProp {
+	path: string
+	Component?: LazyComponent
+	element?: ReactNode
 	useLayout?: boolean
 }

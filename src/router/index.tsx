@@ -1,29 +1,33 @@
 import { Navigate } from 'react-router-dom'
 
-const info = import.meta.glob<CustomRouteProp>('@/views/*/page.(ts|tsx)', { eager: true, import: 'default' })
-
-const pageRoutes = reduce<CustomRouteProp, CustomRouteProp[]>(
-	info,
-	(_routes, v) => {
-		return _routes.concat(v)
-	},
-	[]
-)
+// const pageRoutes: CustomRouteProp[] = [
+// 	{
+// 		path: '/main',
+// 		Component: lazy(() => import('@/views/HomePage'))
+// 	},
+// 	{
+// 		path: '/sudoku',
+// 		Component: lazy(() => import('@/views/game/SudokuGame'))
+// 	}
+// ]
 
 export const routes: CustomRouteProp[] = [
 	{
 		path: '/',
-		element: <Navigate to="/main"></Navigate>
+		element: <Navigate to="/main" />
 	},
 	{
-		path: '/login',
-		Component: lazy(() => import('@/views/LoginPage')),
-		useLayout: false,
-		element: <Navigate to="/login"></Navigate>
+		path: '/main',
+		Component: lazy(() => import('@/views/HomePage')),
+		useLayout: false
 	},
-	...pageRoutes,
+	{
+		path: '/sudoku',
+		Component: lazy(() => import('@/views/game/SudokuGame')),
+		useLayout: false
+	},
 	{
 		path: '*',
-		element: <Navigate to="/main"></Navigate>
+		element: <Navigate to="/main" />
 	}
 ]

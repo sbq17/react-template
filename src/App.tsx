@@ -1,6 +1,11 @@
 import zhCN from 'antd/locale/zh_CN'
 import { ConfigProvider, App as AntApp } from 'antd'
 import 'dayjs/locale/zh-cn'
+// import SudokuGame from './views/game/SudokuGame'
+// import HomePage from './views/HomePage'
+// import { createBrowserRouter, routes } from './routes'
+import { BrowserRouter } from 'react-router-dom'
+import LayoutComponent from './layout'
 
 export default function App() {
 	// const [isDark, setIsDark] = useState(() => theme.defaultAlgorithm)
@@ -59,7 +64,14 @@ export default function App() {
 			}}
 			locale={zhCN}
 		>
-			<AntApp className="w-full h-full">dwada</AntApp>
+			{/* <AntApp className="w-full h-full">
+				<RouterProvider router={createBrowserRouter(routes)} />
+			</AntApp> */}
+			<AntApp className="w-full h-full">
+				<BrowserRouter>
+					<LayoutComponent />
+				</BrowserRouter>
+			</AntApp>
 		</ConfigProvider>
 	)
 }
