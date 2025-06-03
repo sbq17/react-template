@@ -3,7 +3,7 @@ import { SudokuGrid } from './SudokuGrid'
 
 export const SudokuBoard = ({ board, selectedCell, onCellSelect }: SudokuBoardProps) => {
 	return (
-		<div className="grid grid-cols-3 gap-px bg-gray-800 border-2 border-gray-800 mb-4 dark:bg-gray-900 dark:border-gray-700">
+		<div className="grid grid-cols-3 gap-px bg-gray-200 border-2 border-gray-200 mb-4 dark:bg-gray-700 dark:border-gray-600">
 			{[...Array(3)].map((_, gridRow) =>
 				[...Array(3)].map((_, gridCol) => {
 					const cells = []
