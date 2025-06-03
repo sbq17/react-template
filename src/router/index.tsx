@@ -23,7 +23,7 @@ export const routes: CustomRouteProp[] = [
 	},
 	{
 		path: '/sudoku',
-		Component: lazy(() => import('@/views/game/SudokuGame')),
+		Component: lazy(() => import('@/views/game')),
 		useLayout: false
 	},
 	{
