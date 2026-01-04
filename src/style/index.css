@@ -1,15 +1,9 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
 
-@import './modal.css';
-@import './scrollbar.css';
+html, body {
+  @apply w-screen h-screen;
 
-html,
-body {
-	@apply w-screen h-screen;
-
-	#app {
-		@apply h-full w-full select-none;
-	}
+  #root {
+    @apply w-full h-full;
+  }
 }
