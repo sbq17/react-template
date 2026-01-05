@@ -1,7 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import AutoImport from 'unplugin-auto-import/vite'
-import tailwindcss from '@tailwindcss/vite' // 导入 Tailwind Vite 插件
+import tailwindcss from '@tailwindcss/vite'
+import { resolve } from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -31,10 +35,9 @@ export default defineConfig({
 		})
 	],
 
-	// 最新的路径别名配置方式 (Vite 5+)
 	resolve: {
 		alias: {
-			'@': './src'
+			'@': resolve(__dirname, './src')
 		}
 	},
 
@@ -43,4 +46,3 @@ export default defineConfig({
 		open: true
 	}
 })
-

@@ -1,3 +1,3 @@
-export default function Standard() {
-	return <div>standard sudoku</div>
+export default function StandardPage() {
+	return <div>StandardPage</div>
 }

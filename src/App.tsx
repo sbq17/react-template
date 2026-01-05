@@ -1,5 +1,6 @@
 import { ConfigProvider, type ConfigProviderProps } from 'antd'
-import Layout from './layouts'
+import { RouterProvider } from 'react-router'
+import { router } from './routes'
 
 function App() {
 	const configProps: ConfigProviderProps = {
@@ -8,7 +9,7 @@ function App() {
 
 	return (
 		<ConfigProvider {...configProps}>
-			<Layout />
+			<RouterProvider router={router} />
 		</ConfigProvider>
 	)
 }
