@@ -31,8 +31,16 @@ export default defineConfig({
 		})
 	],
 
+	// 最新的路径别名配置方式 (Vite 5+)
+	resolve: {
+		alias: {
+			'@': './src'
+		}
+	},
+
 	server: {
 		hmr: true,
 		open: true
 	}
 })
+
