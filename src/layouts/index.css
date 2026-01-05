@@ -12,4 +12,9 @@
 	.app_layout_main {
 		@apply flex-1 overflow-auto;
 	}
+
+	.app_layout_footer {
+		@apply h-[40px] bg-amber-400 shadow-lg;
+		@apply flex items-center px-2;
+	}
 }
