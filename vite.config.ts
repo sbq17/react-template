@@ -29,6 +29,10 @@ export default defineConfig({
 			// resolvers: [AntdResolver()],
 			eslintrc: { enabled: true, filepath: './.eslintrc-auto-import.js' }
 		})
-	]
-})
+	],
 
+	server: {
+		hmr: true,
+		open: true
+	}
+})
