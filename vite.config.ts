@@ -9,7 +9,7 @@ export default defineConfig({
 		react({
 			tsDecorators: true
 		}),
-		tailwindcss({}),
+		tailwindcss(),
 		AutoImport({
 			imports: [
 				'react',

@@ -1,4 +1,5 @@
 import { ConfigProvider, type ConfigProviderProps } from 'antd'
+import Layout from './layouts'
 
 function App() {
 	const configProps: ConfigProviderProps = {
@@ -7,7 +8,7 @@ function App() {
 
 	return (
 		<ConfigProvider {...configProps}>
-			<div>1231</div>
+			<Layout />
 		</ConfigProvider>
 	)
 }

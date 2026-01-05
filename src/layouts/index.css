@@ -1,0 +1,15 @@
+@reference '../style/index.css';
+
+.app_layout_wrapper {
+	@apply h-full w-full;
+	@apply flex flex-col;
+
+	.app_layout_toolbox {
+		@apply h-[40px] bg-amber-400 shadow-lg;
+		@apply flex items-center px-2;
+	}
+
+	.app_layout_main {
+		@apply flex-1 overflow-auto;
+	}
+}
