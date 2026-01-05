@@ -1,6 +1,15 @@
+import { ConfigProvider, type ConfigProviderProps } from 'antd'
+
 function App() {
-	return <div>1231</div>
+	const configProps: ConfigProviderProps = {
+		componentSize: 'small'
+	}
+
+	return (
+		<ConfigProvider {...configProps}>
+			<div>1231</div>
+		</ConfigProvider>
+	)
 }
 
 export default App
-
