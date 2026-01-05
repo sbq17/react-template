@@ -7,3 +7,4 @@ interface AppMainProps {
 export default function AppMain({ children }: AppMainProps) {
 	return <div className="app_layout_main">{children}</div>
 }
+

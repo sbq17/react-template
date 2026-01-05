@@ -11,6 +11,9 @@
 
 	.app_layout_main {
 		@apply flex-1 overflow-auto;
+		> div {
+			@apply h-full w-full overflow-auto;
+		}
 	}
 
 	.app_layout_footer {
