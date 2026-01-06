@@ -1,3 +1,5 @@
+export * from './standard'
+
 /**
  * sudoku difficulty type
  * @description sudoku difficulty

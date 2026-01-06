@@ -1,5 +1,4 @@
-import type { Difficulty } from '@/types'
-import type { StandardCell } from '@/types/standard'
+import type { Difficulty, StandardCell } from '@/types'
 
 export class StandardSudoku {
 	/**
